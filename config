@@ -1,0 +1,5 @@
+#!/bin/bash
+
+DAT=./data/example/config.tex
+TEM=./templates/basic/main.tex
+
