@@ -1,0 +1,15 @@
+% ;; -*- coding: utf-8 -*-%
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+{% for p in packages %}
+\usepackage{ {{p}} }
+{% endfor %}
+
+
+{{headers}}
+
+\begin{document}
+{{body}}
+\end{document}
