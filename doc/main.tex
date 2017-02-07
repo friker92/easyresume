@@ -1,0 +1,144 @@
+% ;; -*- coding: iso-latin-1; TeX-PDF-mode: t; TeX-master: "main" -*-%
+
+\documentclass{article}
+\usepackage{xspace}
+\usepackage{epsfig}
+\usepackage{latexsym,amssymb,stmaryrd}
+\usepackage{fancybox,epic}
+\usepackage[algoruled,vlined,english]{algorithm2e}
+\usepackage{amsmath}
+\usepackage{colortbl}
+\usepackage{caption}
+\usepackage{color} 
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage[draft]{fixme}
+\usepackage[color=green!20]{todonotes}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{paralist}
+
+\usepackage{arydshln}
+
+\usepackage{url}
+
+\usepackage{listings}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+
+\lstset{ 
+  frame=ltb,
+  framerule=0pt,
+  aboveskip=0mm,
+  framextopmargin=10pt,
+  framexbottommargin=0pt,
+  framexleftmargin=3pt,
+  framesep=0pt,
+  rulesep=0pt,
+  % 
+  stringstyle=\ttfamily,
+  showstringspaces = false,
+  basicstyle=\small\sffamily,
+  commentstyle=\color{black},
+  keywordstyle=\small\bfseries,
+  % 
+  numbers=left,
+  mathescape=true,
+  numbersep=-5pt,
+  numberstyle=\tiny,
+  numberfirstline=true,
+  numberblanklines=true,
+  firstnumber=auto,
+  breaklines=true,
+  language=json
+ % morekeywords={if,then,else,while,do,return,await,get,skip,release,begin} 
+}
+
+
+
+\begin{document}
+
+
+
+\title{EasyResume Ideas}
+
+\author{Jes\'us Javier Dom\'enech Arellano \and Luis Mar\'ia Costero Valero}
+
+\maketitle 
+
+
+\section{CV: Config}
+
+
+\begin{lstlisting}
+// CONFIG 
+{
+    language        : "",
+    description     : "",
+    owner           : "",
+    template-config : TEMPLATE_CONFIG
+}
+
+// TEMPLATE_CONFIG
+
+{
+  template-id : 
+  global      :
+  sort        : [ ... ],
+  items       : [ SECTION, SECTION ]
+}
+
+// SECTION
+{
+  data-type : DATA_TYPE,
+  data      : FILEPATH,
+  template  : FILEPATH,
+  title     : "",
+  pre-text  : "", 
+  post-text : ""
+}
+
+// DATA_TYPE
+( bib | json | plain )
+
+// FILEPATH
+path-to-file
+
+
+
+\end{lstlisting}
+\end{document}
