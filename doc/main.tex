@@ -102,43 +102,11 @@
 
 
 \section{CV: Config}
+\subsection{Global Options}
+\lstinputlisting[language=json]{../default.json}
+\subsection{Template Options}
+\lstinputlisting[language=json]{../config/test/main.json}
+\subsection{Section Options}
+\lstinputlisting[language=json]{../config/test/main.json}
 
-
-\begin{lstlisting}
-// CONFIG 
-{
-    language        : "",
-    description     : "",
-    owner           : "",
-    template-config : TEMPLATE_CONFIG
-}
-
-// TEMPLATE_CONFIG
-
-{
-  template-id : 
-  global      :
-  sort        : [ ... ],
-  items       : [ SECTION, SECTION ]
-}
-
-// SECTION
-{
-  data-type : DATA_TYPE,
-  data      : FILEPATH,
-  template  : FILEPATH,
-  title     : "",
-  pre-text  : "", 
-  post-text : ""
-}
-
-// DATA_TYPE
-( bib | json | plain )
-
-// FILEPATH
-path-to-file
-
-
-
-\end{lstlisting}
 \end{document}

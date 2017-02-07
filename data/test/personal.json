@@ -1,0 +1,9 @@
+{"file":"/templates/test/personal.json",
+ "packages":[{"name": "babel",
+	      "attr": "spanish"},
+	     {"name": "xcolor",
+	      "attr": ""}
+	    ],
+ "headers":["\\newcommand{\\todo}[1]{{\\color{red} TODO #1}}"]
+}
+

@@ -2,6 +2,7 @@
 
 import json
 import pprint
+import os
 from jsoncomment import JsonComment
 
 class ParserConfig:
@@ -24,10 +25,12 @@ class ParserConfig:
         return result 
 
     def openObj(self,data):
-        if isinstance(data, dict)  and ("src" in data): 
-            result = self.parse(data["src"])
-        elif isinstance(data,dict):
+        if isinstance(data,dict):
             result = {}
+            if ("src" in data):
+                pth = os.getcwd() + "/../" + data["src"]
+                result = self.parse(pth)
+                
             for key in data :
                 result[key] = self.openObj(data[key])
         elif isinstance(data,list):
