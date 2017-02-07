@@ -32,7 +32,8 @@ class ParserConfig:
                 result = self.parse(pth)
                 
             for key in data :
-                result[key] = self.openObj(data[key])
+                if key != "src":
+                    result[key] = self.openObj(data[key])
         elif isinstance(data,list):
             result = []
             for item in data:
