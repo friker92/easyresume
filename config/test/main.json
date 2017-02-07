@@ -1,0 +1,22 @@
+{
+    "id" : "test",
+    "sort" : [ "header", "my2" ],
+    "items" : {
+	"header" : {
+	    "data_type": "plain",
+	    "data" :  "aaaa",
+	    "template" : "PATH-Template",
+	    "title" : "Datos",
+	    "pre-text" : "",
+	    "post-text" : ""
+	},
+	"my2" : {
+	    "data_type" : "json",
+	    "data" :  {"src":"../config/sections/my2.json"},
+	    "template" : "PATH-Template",
+	    "title" : "Datos",
+	    "pre-text" : "",
+	    "post-text" : ""
+	}
+    }
+}
