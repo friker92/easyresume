@@ -1,9 +1,9 @@
-{"file"="/templates/test/personal.json",
- "packages"=[{"name": "babel",
+{"file":"/templates/test/personal.tex",
+ "packages":[{"name": "babel",
 	      "attr": "spanish"},
 	     {"name": "xcolor",
 	      "attr": ""}
 	    ],
- "headers"=["\newcommand{\todo}[1]{{\color{red} TODO #1}}"]
+ "headers":["\\newcommand{\\todo}[1]{{\\color{red} TODO #1}}"]
 }
 

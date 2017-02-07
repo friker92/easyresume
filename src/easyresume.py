@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from parser import ParserConfig
+from templateBuilder import TemplateBuilder
 import pprint
 
 def getParams():
@@ -11,13 +12,17 @@ def getParams():
 def getConfig(filename):
     parser =  ParserConfig()
     d = parser.parse(filename)
+    return d
     pp = pprint.PrettyPrinter(indent=2)
     pp.pprint(d)
 
 
 def main():
     params = getParams()
-    getConfig(params["config_file"])
+    d = getConfig(params["config_file"])
+
+    t = TemplateBuilder()
+    t.build(d)
 
 
 

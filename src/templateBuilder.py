@@ -14,6 +14,8 @@ class TemplateBuilder:
         #[...]
 
         # cargamos la plantilla desde disco
+        print data
+    
         templateFolder, templateFile = os.path.split(data["template"])
         
         templateLoader = jinja2.FileSystemLoader( searchpath=templateFolder)

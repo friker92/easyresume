@@ -5,50 +5,35 @@ import os
 
 class JsonSectionBuilder:
     def build(self, data):
-        print data
+        obj = {}
+        
+        #lo relacionado con la plantilla
         templateFolder, templateFile = os.path.split(data["template"]["file"])
         
         templateLoader = jinja2.FileSystemLoader( searchpath=templateFolder)
         templateEnv = jinja2.Environment(loader=templateLoader)
         template = templateEnv.get_template( templateFile)
 
+        if "headers" in data["template"]["headers"]:
+            obj["headers"] = data["template"]["headers"]
+        else:
+            obj["headers"] = ""
+            
+        if "packages" in data["template"]["packages"]:
+            obj["packages"] = data["template"]["packages"]
+        else:
+            obj["packages"] = ""
 
-        obj = {}
-
-        body=""
-        headers=""
-        packages=set()
-        
-        #parsea cada seccion
-        for i in data["sort"]:
-            sect = self.buildSection(data["items"][i])
-            body += sect["body"]
-            headers += sect["head"]
-            packages = packages.union(sect["packages"])
-
-        data["body"] = body
-        data["headers"] = headers
-        data["packages"] = list(packages)
-
-
-        
+            
+        # mix de todo y return de lo correcto
         # sustituimos el contenido
-        outputText = template.render( data["data"] )
+        obj["body"] = template.render( data["data"]["data"] )
 
+        return obj
 
-        print outputText
 
 
 if __name__ == "__main__":
-
-    s=	"{\
-	\"data_type\": \"json\",\
-	    \"data\" :  {\"src\": \"../data/test/personal.json\"},\
-	    \"template\" : \"../templates/test/personal.tex\",\
-	    \"title\" : \"Datos\",\
-	    \"pre-text\" : \"\",\
-	    \"post-text\" : \"\"\
-    }"
 
     j = JsonSectionBuilder()
 
