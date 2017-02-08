@@ -8,7 +8,7 @@ class JsonSectionBuilder:
         obj = {}
         
         #lo relacionado con la plantilla
-        templateFolder, templateFile = os.path.split(data["template"]["file"])
+        templateFolder, templateFile = os.path.split(os.getcwd() + "/../" +  data["template"]["file"])
         
         templateLoader = jinja2.FileSystemLoader( searchpath=templateFolder)
         templateEnv = jinja2.Environment(loader=templateLoader)

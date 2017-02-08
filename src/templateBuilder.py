@@ -14,9 +14,8 @@ class TemplateBuilder:
         #[...]
 
         # cargamos la plantilla desde disco
-        print data
-    
-        templateFolder, templateFile = os.path.split(data["template"])
+        print data["template"]
+        templateFolder, templateFile = os.path.split( os.getcwd() + "/../" + data["template"])
         
         templateLoader = jinja2.FileSystemLoader( searchpath=templateFolder)
         templateEnv = jinja2.Environment(loader=templateLoader)
@@ -30,7 +29,7 @@ class TemplateBuilder:
         for i in data["sort"]:
             sect = self.buildSection(data["items"][i])
             body += sect["body"]
-            headers += sect["head"]
+            headers += sect["headers"]
             packages = packages.union(sect["packages"])
 
         data["body"] = body
@@ -46,7 +45,7 @@ class TemplateBuilder:
     def buildSection(self, data):
         obj = {}
         obj["body"] = ""
-        obj["head"] =""
+        obj["headers"] =""
         obj["packages"] = []
 
 

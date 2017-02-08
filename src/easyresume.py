@@ -22,7 +22,7 @@ def main():
     d = getConfig(params["config_file"])
 
     t = TemplateBuilder()
-    t.build(d)
+    t.build(d["template_config"])
 
 
 
