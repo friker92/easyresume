@@ -1,7 +1,17 @@
 {
     "name": "Nombre test",
     "surname": "hola caracola",
-    "phone": "9124568242"
+    "address": "Calle del caracol 4",
+    "city": "Madrid",
+    "mobile": "654332145",
+    "phone": "234456567",
+    "fax": "234r23",
+    "email": "sdfs@asdf.es",
+    "web_text": "Let's do it (.com)",
+    "web_url": "www.letsdoit.com",
+    "extrainfo": "hola",
+    "photo": "picture.jpg",
+    "quote": "asdf.asdf"
 }
 
 

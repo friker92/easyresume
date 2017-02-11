@@ -1,0 +1,6 @@
+{
+  "language" : "spanish",
+  "description" : "For testing",
+  "owner" : "both",
+    "template_config" : {"src":"/config/moderncv/main.json"}
+}

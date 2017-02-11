@@ -18,7 +18,14 @@ class TemplateBuilder:
         templateFolder, templateFile = os.path.split( os.getcwd() + "/../" + data["template"])
         
         templateLoader = jinja2.FileSystemLoader( searchpath=templateFolder)
-        templateEnv = jinja2.Environment(loader=templateLoader)
+        templateEnv = jinja2.Environment(loader=templateLoader)        
+        templateEnv.block_start_string = '((*'
+        templateEnv.block_end_string = '*))'
+        templateEnv.variable_start_string = '((('
+        templateEnv.variable_end_string = ')))'
+        templateEnv.comment_start_string = '((='
+        templateEnv.comment_end_string = '=))'
+
         template = templateEnv.get_template( templateFile)
 
         body=""
@@ -41,7 +48,7 @@ class TemplateBuilder:
         # sustituimos el contenido
         outputText = template.render( data )
         print outputText
-
+        
     def buildSection(self, data):
         obj = {}
         obj["body"] = ""

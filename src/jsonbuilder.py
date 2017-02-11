@@ -6,12 +6,20 @@ import os
 class JsonSectionBuilder:
     def build(self, data):
         obj = {}
-        
+
+
         #lo relacionado con la plantilla
         templateFolder, templateFile = os.path.split(os.getcwd() + "/../" +  data["template"]["file"])
         
         templateLoader = jinja2.FileSystemLoader( searchpath=templateFolder)
         templateEnv = jinja2.Environment(loader=templateLoader)
+        templateEnv.block_start_string = '((*'
+        templateEnv.block_end_string = '*))'
+        templateEnv.variable_start_string = '((('
+        templateEnv.variable_end_string = ')))'
+        templateEnv.comment_start_string = '((='
+        templateEnv.comment_end_string = '=))'
+        
         template = templateEnv.get_template( templateFile)
 
         if "headers" in data["template"]["headers"]:

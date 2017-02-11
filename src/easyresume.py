@@ -6,7 +6,7 @@ import pprint
 
 def getParams():
     p = {}
-    p["config_file"] = "../default.json"
+    p["config_file"] = "../default_moderncv.json"
     return p
 
 def getConfig(filename):

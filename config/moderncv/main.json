@@ -1,0 +1,22 @@
+{
+    "id" : "test",
+    "sort" : [ "personal", "educacion"],
+    "template" : "/templates/moderncv/cv.tex",
+    "style" : "classic",
+    "color" : "blue",
+
+    "items" : {
+	"personal" : {
+	    "data" :  {"type": "json",
+		       "data":{"src": "/data/test/personal.json"}
+		      },	    
+	    "template" : {"src": "/config/moderncv/personal.json"},
+	},
+	"educacion" : {
+	    "data" : {"type": "json",
+		      "data":{"src": "/data/test/educacion.json"}
+		     },
+	    "template" : {"src": "/config/moderncv/educacion.json"},
+	},
+    }
+}
