@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 
+import sys
+import codecs
 from parser import ParserConfig
 from templateBuilder import TemplateBuilder
 import pprint
+sys.stdout=codecs.getwriter('utf-8')(sys.stdout)
 
 def getParams():
     p = {}
